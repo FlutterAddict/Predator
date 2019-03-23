@@ -52,15 +52,61 @@ The files content files in `docs/` can be either markdown or HTML files:
 I decided to learn Webpack (v4.29.6) and use it for this project.   
    
 I'd like not to add any additional tooling like task runners or npm scripts, so I'll try do everything with Webpack:
-- bundling JavaScript modules, transpiling it down to ES5 and minifying it
-- compiling sass, prefixing the css and minifying it
-- minifying HTML
+- bundling JavaScript modules, transpiling it down to ES5 and minifying it,
+- compiling sass, prefixing the css and minifying it,
+- minifying HTML.
+   
+I'll make some notes here.   
 
-### Install Webpack
+### Webpack
+
+#### Install
 It is recommended to install Webpack locally for each project. Of course, we'll need Node.js installed.
 ```
 npm install --save-dev webpack webpack-cli
 ```
+
+#### Run
+As it is installed locally, not globally, we can't just run `webpack`:
+```
+> webpack
+'webpack' is not recognized as an internal or external command,
+operable program or batch file.
+```
+
+##### npm scripts
+The `webpack` command is accessible from npm scripts.   
+Those are located in `package.json` "script" block:
+```
+"scripts": {
+  "build": "webpack"
+}
+```
+Running `npm run build` will work as expected.
+
+##### npx
+You can also run it like that: `npx webpack`.   
+This, under the hood will find the local installation of webpack and run its binary version.   
+
+
+#### Configure
+Webpack by default has some configuration that grab the script at `src/index.js` and will generate `dist/main.js` as the output.   
+
+If we don't provide it a configuration file, it will run by the default configuration.   
+
+By default, when we run `npx webpack`, it searches for configuration in the root directory of our project in the file named `webpack.config.js`.
+
+However, we are not limited to one configuration file and one location. We can name configuration files however we want and store them wherever we want.
+
+Let's say that our configuration file is in `webpack/release.js` and we want apply it.   
+
+We can do this by running webpack with `--config` parameter, just like that:
+```
+> npx webpack --config webpack/release.js
+```
+// add some js or add html plugin
+
+
 
 ### Push to gh-pages
 ```
