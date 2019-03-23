@@ -55,3 +55,9 @@ I'd like not to add any additional tooling like task runners or npm scripts, so 
 - bundling JavaScript modules, transpiling it down to ES5 and minifying it
 - compiling sass, prefixing the css and minifying it
 - minifying HTML
+
+### Install Webpack
+It is recommended to install Webpack locally for each project. Of course, we'll need Node.js installed.
+```
+npm install --save-dev webpack webpack-cli
+```
