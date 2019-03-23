@@ -25,18 +25,18 @@ docs/                     <- all the content goes here
 ```
 Should render following sidebar structure in the HOME tab: // explain tabs (ss)
 ```
-Setup             \/
-  * Installation
-  * Configuration
-Guide             \/
-  Getting Started \/
-    * Lorem 1
-    * Lorem 2
-    * Lorem 3
-  Diving Deeper   \/
-    * Ipsum 1
-    * Ipsum 2
-    * Ipsum 3
+Setup             \/ |
+  * Installation     |
+  * Configuration    |
+Guide             \/ |
+  Getting Started \/ |
+    * Lorem 1        |
+    * Lorem 2        |
+    * Lorem 3        |
+  Diving Deeper   \/ |
+    * Ipsum 1        |
+    * Ipsum 2        |
+    * Ipsum 3        |
 ```
 
 I am not sure if all the operations can be done from browsers JavaScript, like reading the file structure of the `docs/` folder, or if I'll need to use Node. I'm sure I'll learn a lot while implementing all this though.
