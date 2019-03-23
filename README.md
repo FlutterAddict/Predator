@@ -61,3 +61,8 @@ It is recommended to install Webpack locally for each project. Of course, we'll 
 ```
 npm install --save-dev webpack webpack-cli
 ```
+
+### Push to gh-pages
+```
+git subtree push --prefix dist origin gh-pages
+```
