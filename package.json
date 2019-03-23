@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Fast, featherweight single-web app documentation generator written in native, object-oriented JavaScript (ES6+) - no framework used.",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FlutterAddict/Predator.git"
