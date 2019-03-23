@@ -146,6 +146,14 @@ import '../css/app.css';
 Thanks to `css-loader` we can do this, and `style-loader` will automatically apply the styles to the HTML. Nice!
 
 
+##### HtmlWebpackPlugin
+
+###### Install
+`npm install --save-dev html-webpack-plugin`
+Ok enough notes, I got u webpack, now more practice. See the webpack.config.js
+
+
+
 ### Push to gh-pages
 ```
 git subtree push --prefix dist origin gh-pages
