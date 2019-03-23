@@ -1,3 +1,5 @@
-import obj from './module';
+import './loadCSS';
 
-console.log(obj.prop);
+
+
+console.log('Hello from JavaScript!');

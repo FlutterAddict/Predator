@@ -104,8 +104,46 @@ We can do this by running webpack with `--config` parameter, just like that:
 ```
 > npx webpack --config webpack/release.js
 ```
-// add some js or add html plugin
 
+##### Loading CSS
+To import a CSS file from within a JS module, we need to install and add to module configuration two loaders:
+- `css-loader` which interprets `@import` and `url()` like `import/require()` and will resolve them
+- `style-loader` which injects the `<style>` tag tag to the HTML DOM
+
+###### Install
+```
+npm install --save-dev css-loader style-loader
+```
+
+###### Add Loaders
+Now we need to add the loaders to our module configuration:
+```
+const path = require('path');
+
+module.exports = {
+  entry: './src/js/app.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.js'
+  },
+  module: {
+    rules: [
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+    ]
+  }
+};
+```
+
+Now any file with a name that passes the test, will be server to specified loaders.   
+In this case, any files ending with `.css` will be served to `style-loader` and `css-loader`.   
+
+###### Load the CSS
+That's the final step. So how do we load it? We gave Webpack only one entry point, which is the `src/js/app.js` file, and there we go.   
+We load CSS through the JavaScript:
+```
+import '../css/app.css';
+```
+Thanks to `css-loader` we can do this, and `style-loader` will automatically apply the styles to the HTML. Nice!
 
 
 ### Push to gh-pages
