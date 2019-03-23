@@ -2,7 +2,7 @@
   "name": "predator",
   "version": "1.0.0",
   "description": "Fast, featherweight single-web app documentation generator written in native, object-oriented JavaScript (ES6+) - no framework used.",
-  "main": "src/js/app.js",
+  "private": true,
   "dependencies": {},
   "repository": {
     "type": "git",
